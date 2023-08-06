@@ -45,6 +45,24 @@ function App() {
       options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
       correctAnswer: 'Mars',
     },
+    {
+      id: 3,
+      question: 'Which planet is known as the "Red Planet"?',
+      options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
+      correctAnswer: 'Mars',
+    },
+    {
+      id: 4,
+      question: 'Which planet is known as the "Red Planet"?',
+      options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
+      correctAnswer: 'Mars',
+    },
+    {
+      id: 5,
+      question: 'Which planet is known as the "Red Planet"?',
+      options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
+      correctAnswer: 'Mars',
+    },
     
   ];
 
