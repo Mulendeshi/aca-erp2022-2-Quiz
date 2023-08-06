@@ -1,30 +1,56 @@
 version: 2.1
-
-orbs:
-  heroku: circleci/heroku@0.0.10
-
 jobs:
-  build:
+  preview_deployment:
     docker:
-      - image: circleci/node:10.16.3
-    working_directory: ~/repo
+      - image: cimg/node:20.5.0
+    environment:
+      VERCEL_ORG_ID: $VERCEL_ORG_ID
+      VERCEL_PROJECT_ID: $VERCEL_PROJECT_ID
     steps:
       - checkout
-      # install dependencies
       - run:
-          name: Install Dependencies
-          command: npm install
-      #- run:
-      #    name: Run tests
-      #    command: npm run test
+          name: Install Vercel CLI
+          command: sudo npm install --global vercel@latest
+      - run:
+          name: Pull Vercel Environment Information
+          command: sudo vercel pull --yes --environment=preview --token=$VERCEL_TOKEN
+      - run:
+          name: Build Project Artifacts
+          command: sudo vercel build --token=$VERCEL_TOKEN
+      - run:
+          name: Deploy Project Artifacts to Vercel
+          command: sudo vercel deploy --prebuilt --token=$VERCEL_TOKEN
+
+  production_deployment:
+    docker:
+      - image: cimg/node:20.5.0
+    environment:
+      VERCEL_ORG_ID: $VERCEL_ORG_ID
+      VERCEL_PROJECT_ID: $VERCEL_PROJECT_ID
+    steps:
+      - checkout
+      - run:
+          name: Install Vercel CLI
+          command: sudo npm install --global vercel@latest
+      - run:
+          name: Pull Vercel Environment Information
+          command: sudo vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+      - run:
+          name: Build Project Artifacts
+          command: sudo vercel build --prod --token=$VERCEL_TOKEN
+      - run:
+          name: Deploy Project Artifacts to Vercel
+          command: sudo vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
 
 workflows:
-  heroku_deploy:
+  version: 2
+  preview_and_production:
     jobs:
-      - build
-      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
-          requires:
-            - build
+      - preview_deployment:
           filters:
             branches:
-              only: main
+              ignore: /main/
+      - production_deployment:
+          filters:
+            branches:
+              only: /main/
