@@ -123,9 +123,10 @@ function App() {
         >
           I Love ACA
         </a>
-      </header>
 
-      {currentQuestion < quizData.length ? (
+
+
+        {currentQuestion < quizData.length ? (
         <div className="Quiz-container"> {/* Use "Quiz-container" class for the quiz */}
           <h2 className="count">Question {currentQuizQuestion.id}/{quizData.length}</h2>
           <h3 className="Question">{currentQuizQuestion.question}</h3>
@@ -154,6 +155,13 @@ function App() {
               </button>
         </div>
       )}
+
+
+
+
+
+      </header>
+
     </div>
   );
 }
