@@ -36,79 +36,9 @@
     transform: rotate(360deg);
   }
 }
-/* Quiz container styles */
-.Quiz-container {
+
+.content-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-}
-
-/* Question count styles */
-.count {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-/* Question styles */
-.Question {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-}
-
-/* Answer container styles */
-.Answers {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Answer button styles */
-.Answer-button {
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-}
-
-.Answer-button:hover {
-  background-color: #0056b3;
-}
-
-/* Result container styles */
-.Result {
-  margin-top: 40px;
-}
-
-/* Score styles */
-.Score {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* User answers styles */
-.User-answers {
-  margin-top: 10px;
-  font-size: 1.2rem;
-}
-
-/* Restart button styles */
-.Restart-button {
+  align-items: flex-start; /* Adjust alignment as needed */
   margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: blue;
-  color: white;
 }
-
-.Restart-button:hover {
-  background-color: skyblue;
-}
-

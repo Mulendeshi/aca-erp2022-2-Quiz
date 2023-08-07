@@ -1,0 +1,45 @@
+
+
+.sidebar {
+  flex: 0 0 250px;
+  background-color: blue;
+  padding: 20px;
+  overflow-y: auto;
+}
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .topic-list {
+    display: flex;
+  flex-direction: column;
+  }
+  
+  .topic-item {
+    width: 120px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .topic-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    
+  }
+  
+  .topic-item p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+ 
+  .topic-item:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
+  

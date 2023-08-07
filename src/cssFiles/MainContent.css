@@ -1,0 +1,42 @@
+.main-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center; 
+  align-items: flex-start; 
+}
+
+.topic-image {
+  flex: 0 0 50%; /* Adjust width of the image container */
+  padding-right: 20px;
+}
+
+  
+  .topic-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .topic-text {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  /* Add a box-shadow effect for the topic text container */
+  .topic-text {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
