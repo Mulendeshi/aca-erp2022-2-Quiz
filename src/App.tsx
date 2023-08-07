@@ -63,11 +63,17 @@ function App() {
       options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
       correctAnswer: 'Mars',
     },
+    {
+      id:6,
+      question: 'who is the owner of this computer?',
+      options: ['Jackson', 'Amon', 'Sam', 'Jesu'],
+      correctAnswer: 'Amon',
+    }
     
   ];
 
   useEffect(() => {
-    setQuizData(sampleQuizData); // Use the sample data here
+    setQuizData(sampleQuizData); 
   }, []);
 
 
